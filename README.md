@@ -6,7 +6,7 @@ Hệ thống mẫu triển khai kiến trúc Clean Code, Component-based Archite
 
 ## 📅 Nhật ký phát triển
 
-### Session 1 – 25/05/2025  
+### Ngày 1 – 25/05/2025  
 🔹 **Hành động chính:**  
 - Tạo repo `digital-dso-app` trên GitHub  
 - Thiết lập nhánh `main` + `develop`  
@@ -56,4 +56,19 @@ tests/
 - Mỗi Room là một Component có đủ các tầng: `domain`, `application`, `interface`, `infrastructure`
 - `shared/` chứa cấu hình, base class, helper function
 - `tests/` tổ chức song song với `src/components/`
+
+## 🧠 Nhật ký gợi ý hôm nay
+
+📅 Ngày 2 – 26/05/2025  
+🔹 **Hành động chính:**  
+- Thiết lập cấu trúc thư mục theo từng Room (component)  
+- Tạo `__init__.py` để Python nhận diện package  
+- Cập nhật mô tả kiến trúc trong README  
+
+🔸 **Khó khăn:**  
+- [ghi vào nếu có]  
+
+📌 **Ghi chú học được:**  
+- Cấu trúc component giúp chia nhỏ team, module hóa logic  
+- `__init__.py` cần thiết để test và import hoạt động ổn định
 
