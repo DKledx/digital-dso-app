@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "digital-dso-app"
+version = "0.1.0"
+description = "App quản lý danh mục SKCL theo kiến trúc Clean Architecture"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.12"
+sqlalchemy = "^2.0.41"
+pydantic = "^2.11.5"
+python-dotenv = "^1.1.0"
+uvicorn = "^0.34.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.2.0"
+mypy = "^1.15.0"
+factory-boy = "^3.3.3"
+httpx = "^0.28.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
