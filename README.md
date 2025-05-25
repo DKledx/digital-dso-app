@@ -72,3 +72,38 @@ tests/
 - Cấu trúc component giúp chia nhỏ team, module hóa logic  
 - `__init__.py` cần thiết để test và import hoạt động ổn định
 
+📅 Ngày 3 – 27/05/2025  
+🔹 **Hành động chính:**  
+- Cài Poetry  
+- Tạo `pyproject.toml` với FastAPI, SQLAlchemy, Pydantic  
+- Cài pytest, black, isort, flake8 cho dev  
+- Chạy FastAPI Hello World  
+
+🔸 **Khó khăn:**  
+- Gặp vấn đề cài đặt Poetry - Do chưa update 
+  - Lỗi không tìm thấy phiên bản Poetry 2.1.3:
+Quá trình cài đặt Poetry báo lỗi vì không tồn tại phiên bản 2.1.3 trên PyPI. Poetry hiện chỉ có bản 1.x.
+
+Lỗi khi cài qua pipx:
+Quá trình cài đặt Poetry bằng pipx gặp lỗi build các package C extension (cffi, msgpack) do thiếu môi trường build hoặc thư viện hệ thống.
+
+Nguyên nhân:
+
+Chưa cập nhật pip, setuptools, wheel.
+Thiếu Xcode Command Line Tools hoặc các thư viện build cần thiết (OpenSSL, header files).
+Biến môi trường PATH chưa nhận diện pipx/poetry sau khi cài.
+Cách khắc phục:
+
+Cập nhật pip, setuptools, wheel.
+Đảm bảo đã cài Xcode Command Line Tools (xcode-select --install).
+Cài thêm OpenSSL nếu cần, và export biến môi trường.
+Sử dụng lệnh cài đặt Poetry chính thức để lấy bản mới nhất.
+Thêm $HOME/.local/bin vào PATH nếu cần.
+Kết quả:
+Sau khi thực hiện các bước trên, bạn đã cài đặt Poetry thành công và tiếp tục được các bước tiếp theo.
+
+📌 **Ghi chú học được:**  
+- Poetry quản lý dependencies rất gọn gàng  
+- FastAPI có Swagger tích hợp cực tiện
+
+
