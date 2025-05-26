@@ -1,0 +1,29 @@
+name: CI – Digital DSO App
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔽 Checkout code
+        uses: actions/checkout@v3
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: 📦 Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+      - name: 📂 Install dependencies
+        run: |
+          poetry install
+      - name: 🧹 Run linters
+        run: |
+          poetry run black . --check
+          poetry run isort . --check
+          poetry run flake8 src/
+          poetry run mypy src/
+      - name: 🧪 Run tests
+        run: poetry run pytest
