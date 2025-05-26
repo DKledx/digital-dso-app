@@ -1,9 +1,9 @@
 name: CI – Digital DSO App
 on:
   push:
-    branches: [main, develop]
+    branches: ["*"]
   pull_request:
-    branches: [main, develop]
+    branches: ["*"]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
