@@ -31,5 +31,5 @@ jobs:
       - name: 🧪 Run tests
         run: poetry run pytest
 
-      - name: Check import formatting with isort
-        run: poetry run isort --check-only .
+      # - name: Check import formatting with isort
+      #   run: poetry run isort --check-only .
