@@ -107,7 +107,7 @@ docker compose up --build
 |-------------------------  |:----------:|
 | GitHub repo & branch      | ✅         |
 | Clean folder structure    | ✅         |
-| Poetry, env, docker setup | ✅       |
+| Poetry, env, docker setup | ✅         |
 | Chạy thử app              | ✅         |
 | README, tag milestone     | ✅         |
 
