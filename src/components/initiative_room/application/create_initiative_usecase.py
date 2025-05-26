@@ -2,9 +2,7 @@ from datetime import UTC, datetime
 
 datetime.now(UTC)
 from src.components.initiative_room.interface.schemas import (
-    InitiativeCreateRequest,
-    InitiativeCreateResponse,
-)
+    InitiativeCreateRequest, InitiativeCreateResponse)
 
 
 class CreateInitiativeUseCase:
