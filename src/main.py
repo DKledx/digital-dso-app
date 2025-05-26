@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from src.components.initiative_room.interface.initiative_router import \
+    router as initiative_router
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello Digital DSO 👋"}
+app = FastAPI()
+app.include_router(initiative_router)

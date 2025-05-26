@@ -1,30 +1,42 @@
 # 🚀 Digital DSO App
 
-Hệ thống quản lý danh mục Sáng Kiến Chiến Lược (SKCL), được xây dựng theo kiến trúc Clean Code, Component-based Architecture, và DevOps-ready.
+Hệ thống quản lý danh mục Sáng Kiến Chiến Lược (SKCL), xây dựng theo **Clean Architecture**, **Component-based**, sẵn sàng DevOps và CI/CD.
 
 ---
 
 ## 📦 Tech Stack
 
-- Python 3.11
-- FastAPI, Pydantic, SQLAlchemy
-- Poetry, Docker, GitHub Actions
-- SonarQube (coming)
-- PostgreSQL (coming)
+- **Python 3.11**
+- **FastAPI** (API backend)
+- **Pydantic** (Schema/Validation)
+- **SQLAlchemy** (ORM)
+- **Poetry** (Dependency management)
+- **Docker** (Containerization)
+- **GitHub Actions** (CI/CD)
+- **SonarQube/SonarCloud** (Code Quality & Coverage)
+- **PostgreSQL** (coming soon)
 
 ---
 
-## 🧱 Kiến trúc thư mục
+## 🧱 Kiến trúc thư mục (Clean Architecture)
 
 ```
 src/
 ├── components/
 │   ├── initiative_room/
+│   │   ├── application/    # UseCase, business logic
+│   │   ├── domain/         # Entity, domain model
+│   │   ├── infrastructure/ # Repository, external service
+│   │   └── interface/      # API router, schema, controller
 │   ├── strategy_room/
 │   └── portfolio_room/
-├── shared/
-tests/
+├── shared/                 # Common utils, config, core
+tests/                      # Unit & integration tests
+.github/workflows/          # CI/CD pipelines
 ```
+
+- **Component-based:** Mỗi Room là một module độc lập, dễ mở rộng, dễ test.
+- **Clean Architecture:** Tách biệt rõ ràng giữa domain, usecase, interface, infrastructure.
 
 ---
 
@@ -46,58 +58,50 @@ docker compose up --build
 
 ---
 
+## 🧪 Kiểm thử & Coverage
+
+- **Chạy test:**  
+  ```bash
+  poetry run pytest
+  ```
+- **Kiểm tra coverage:**  
+  ```bash
+  poetry run pytest --cov=src --cov-report=xml
+  ```
+  Kết quả coverage sẽ lưu tại `coverage.xml`.
+
+---
+
+## 🤖 CI/CD & Code Quality
+
+![CI](https://github.com/DKledx/digital-dso-app/actions/workflows/ci.yml/badge.svg)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=digital-dso-app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=digital-dso-app)
+
+- **CI/CD:** Tự động lint, test, đo coverage trên mọi push/pull request (GitHub Actions).
+- **SonarQube/SonarCloud:** Theo dõi chất lượng code, coverage, bug, code smell.
+- **TODO:** Đang tạm thời comment kiểm tra Black/isort trong CI, sẽ chuẩn hóa lại sau.
+
+---
+
+## 🚦 Quy trình phát triển
+
+1. **Mỗi tính năng lớn tạo branch feature/**.
+2. **Commit code nhỏ, rõ ràng, thường xuyên.**
+3. **Viết test cho từng usecase và API.**
+4. **Kiểm tra CI/CD pass trước khi merge.**
+5. **Đảm bảo coverage và chất lượng code qua SonarQube.**
+
+---
+
 ## ✅ Roadmap
 
-- Setup base structure
-- Poetry + Docker
-- Viết module Initiative Room
-- CI/CD + Sonar + Test
-- Release Staging
-
----
-
-## 📊 Badge (placeholder)
-
-![CI](https://img.shields.io/badge/ci-passing-brightgreen)  
-![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
-
----
-
-## 📅 Nhật ký phát triển
-
-### Ngày 1 – 25/05/2025  
-- Khởi tạo repo, nhánh main/develop, mô tả ban đầu
-
-### Ngày 2 – 26/05/2025  
-- Thiết lập cấu trúc thư mục component-based
-
-### Ngày 3 – 27/05/2025  
-- Poetry, pyproject.toml, FastAPI Hello World
-
-### Ngày 4 – 28/05/2025  
-- Dockerfile, docker-compose, .env.example
-
-### Ngày 5 – 29/05/2025  
-- Viết README chuẩn, mô tả kiến trúc, tech stack, hướng dẫn
-- Gắn badge CI và coverage (placeholder)
-- Merge develop → main, tạo tag v0.0.1
-
----
-
-## 🧠 Nhật ký gợi ý hôm nay
-
-📅 Ngày 5 – 29/05/2025  
-🔹 **Hành động chính:**  
-- Viết README đầy đủ: mô tả hệ thống, hướng dẫn chạy, kiến trúc  
-- Gắn badge CI và coverage (tạm placeholder)  
-- Merge develop → main, tạo tag v0.0.1  
-
-🔸 **Khó khăn:**  
-- [ghi nếu có]  
-
-📌 **Ghi chú học được:**  
-- README rõ ràng giúp team mới onboard rất nhanh  
-- Gắn tag version giúp chuẩn bị cho CI/CD tự động  
+- [x] Setup base structure
+- [x] Poetry + Docker
+- [x] Viết module Initiative Room
+- [x] CI/CD (GitHub Actions)
+- [x] Test & Coverage
+- [ ] SonarQube tích hợp
+- [ ] Release Staging
 
 ---
 
@@ -113,3 +117,9 @@ docker compose up --build
 
 ---
 
+## 📚 Tài liệu tham khảo
+
+- [Clean Architecture (Uncle Bob)](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [FastAPI Docs](https://fastapi.tiangolo.com/)
+- [Poetry Docs](https://python-poetry.org/docs/)
+- [SonarCloud Docs](https://docs.sonarcloud.io/)
