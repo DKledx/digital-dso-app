@@ -1,7 +1,7 @@
-from src.components.initiative_room.application.create_initiative_usecase import \
-    CreateInitiativeUseCase
-from src.components.initiative_room.interface.schemas import \
-    InitiativeCreateRequest
+from src.components.initiative_room.application.create_initiative_usecase import (
+    CreateInitiativeUseCase,
+)
+from src.components.initiative_room.interface.schemas import InitiativeCreateRequest
 from tests.components.initiative_room.mock_repo import MockInitiativeRepository
 
 
