@@ -1,4 +1,4 @@
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 
 datetime.now(UTC)
 from src.components.initiative_room.interface.schemas import (
