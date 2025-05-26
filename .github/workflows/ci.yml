@@ -27,3 +27,6 @@ jobs:
           poetry run mypy src/
       - name: 🧪 Run tests
         run: poetry run pytest
+
+      - name: Check import formatting with isort
+        run: poetry run isort --check-only .
