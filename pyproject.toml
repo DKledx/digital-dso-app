@@ -5,6 +5,18 @@ description = "App quản lý danh mục SKCL theo kiến trúc Clean Architectu
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
+
+[tool.poetry]
+name = "digital-dso-app"
+version = "0.1.0"
+description = "App quản lý danh mục SKCL theo kiến trúc Clean Architecture"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "*", from = "src" }
+]
+
+
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.115.12"
