@@ -5,7 +5,7 @@ description = "App quản lý danh mục SKCL theo kiến trúc Clean Architectu
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 packages = [
-    { include = "*", from = "src" }
+    { include = "components", from = "src" }
 ]
 
 
