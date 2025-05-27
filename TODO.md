@@ -10,10 +10,11 @@
     - Commit lại để đảm bảo code chuẩn hóa và CI luôn xanh.
 
 
-- [ ] Kích hoạt lại bước SonarQube Scan khi đã sẵn sàng cấu hình secret và project trên SonarCloud.
-- [ ] Kiểm tra lại quyền truy cập và tên secret SONAR_TOKEN.
-- [ ] Đảm bảo projectKey và organization đúng với SonarCloud dashboard.
-- [ ] Khi đã sẵn sàng, bỏ comment các dòng SonarQube Scan bên dưới để tiếp tục tích hợp kiểm soát chất lượng mã nguồn tự động.
+- [x] Kích hoạt lại bước SonarQube Scan khi đã sẵn sàng cấu hình secret và project trên SonarCloud.
+- [x] Kiểm tra lại quyền truy cập và tên secret SONAR_TOKEN.
+- [x] Đảm bảo projectKey và organization đúng với SonarCloud dashboard.
+- [x] Khi đã sẵn sàng, bỏ comment các dòng SonarQube Scan bên dưới để tiếp tục tích hợp kiểm soát chất lượng mã nguồn tự động.
+- [x] SonarQube đã chạy thành công trên CI/CD 🎉
 
 ## Ghi chú
 
