@@ -27,6 +27,7 @@ mypy = "^1.15.0"
 factory-boy = "^3.3.3"
 httpx = "^0.28.1"
 pytest-asyncio = "^1.0.0"
+pytest-cov = "^6.1.1"
 
 [build-system]
 requires = ["poetry-core"]
