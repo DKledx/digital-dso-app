@@ -36,6 +36,6 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=digital-dso-app
-            -Dsonar.organization=khuong-le-daniel
+            -Dsonar.organization=dkledx
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
