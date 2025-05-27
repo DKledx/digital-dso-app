@@ -1,3 +1,8 @@
+
+# Giới thiệu github/workflows 
+# Tệp này định nghĩa các công việc sẽ được thực hiện khi có sự kiện xảy ra trong kho lưu trữ.
+# Trong trường hợp này, nó sẽ chạy khi có đẩy vào nhánh main hoặc develop, hoặc khi có yêu cầu kéo (pull request) được mở, đồng bộ hóa hoặc tái mở.
+
 name: Build
 
 on:
