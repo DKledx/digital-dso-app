@@ -21,12 +21,12 @@ jobs:
         run: |
           poetry install
 
-      # - name: 🧹 Run linters
-      #   run: |
-      #     # poetry run black . --check
-      #     # poetry run isort . --check
-      #     poetry run flake8 src/
-      #     poetry run mypy src/
+      - name: 🧹 Run linters
+        run: |
+          poetry run black . --check
+          poetry run isort . --check
+          poetry run flake8 src/
+          poetry run mypy src/
 
       - name: 🧪 Run tests & coverage
         run: poetry run pytest --cov=src --cov-report=xml
