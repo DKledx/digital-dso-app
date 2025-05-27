@@ -33,7 +33,7 @@ jobs:
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          args: ""
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        
- 
