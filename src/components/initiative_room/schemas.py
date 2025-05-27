@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel, Field, field_validator
 import re
 
@@ -23,3 +24,4 @@ class InitiativeCreateResponse(BaseModel):
     owner_unit: str
     expected_outcome: str
     status: str = "draft"
+    created_at: datetime

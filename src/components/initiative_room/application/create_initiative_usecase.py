@@ -15,5 +15,7 @@ class CreateInitiativeUseCase:
             description=data.description,
             quarter=data.quarter,
             owner_unit=data.owner_unit,
-            expected_outcome=data.expected_outcome
+            expected_outcome=data.expected_outcome,
+            status="draft",
+            created_at=datetime.now(UTC)
         )
