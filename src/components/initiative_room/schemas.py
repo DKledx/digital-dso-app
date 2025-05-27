@@ -22,3 +22,4 @@ class InitiativeCreateResponse(BaseModel):
     quarter: str
     owner_unit: str
     expected_outcome: str
+    status: str = "draft"
