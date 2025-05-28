@@ -21,8 +21,7 @@ jobs:
         run: |
           poetry install
 
-<<<<<<< HEAD
-=======
+
       # - name: 🧹 Run linters
       #   run: |
       #     # poetry run black . --check
@@ -39,4 +38,4 @@ jobs:
           args: ""
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
->>>>>>> develop
+
