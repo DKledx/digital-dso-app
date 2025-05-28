@@ -1,0 +1,31 @@
+name: 🚀 Release – Docker Tag & Build
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔽 Checkout
+        uses: actions/checkout@v3
+      - name: 🐍 Setup Python & Poetry
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: 📦 Install Poetry & Dependencies
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          poetry install
+      - name: ✅ Run test + coverage
+        run: |
+          poetry run pytest --cov=src --cov-report=xml
+      - name: 🐳 Build Docker image
+        run: |
+          echo "TAG=\${GITHUB_REF##*/}"
+          docker build -t digital-dso-app:\${GITHUB_REF##*/} .
+      # Optional: Push image to registry
+      # - name: 🔐 Login to GHCR
+      #   run: echo "\${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u \${{ github.actor }} --password-stdin
+      # - name: 📤 Push image
+      #   run: docker push ghcr.io/<org>/digital-dso-app:\${GITHUB_REF##*/}
