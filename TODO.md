@@ -16,6 +16,10 @@
 - [x] Khi đã sẵn sàng, bỏ comment các dòng SonarQube Scan bên dưới để tiếp tục tích hợp kiểm soát chất lượng mã nguồn tự động.
 - [x] SonarQube đã chạy thành công trên CI/CD 🎉
 
+## Test automation
+- [ ] Ngày 21 các test chưa pass hết, check lại các test case, fix lỗi DB trả về 400
+    test_create_initiative_api.py
+
 ## Ghi chú
 
 - Lý do: Đang gặp lỗi format/import do Black/isort, cần ưu tiên tiến độ. Sẽ hoàn thiện sau.
