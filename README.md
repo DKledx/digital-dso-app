@@ -72,6 +72,13 @@ docker compose up --build
 
 ---
 
+## 🚦 CI/CD Status
+![CI](https://github.com/<your-org>/<repo>/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
+![Release](https://img.shields.io/github/v/tag/<your-org>/<repo>)
+
+---
+
 ## 🤖 CI/CD & Code Quality
 
 ![CI](https://github.com/DKledx/digital-dso-app/actions/workflows/ci.yml/badge.svg)
