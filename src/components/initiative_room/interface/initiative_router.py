@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, HTTPException
 from src.shared.core.logger import get_logger
 from src.components.initiative_room.application.create_initiative_usecase import CreateInitiativeUseCase
 from src.components.initiative_room.infrastructure.repo_mock import MockInitiativeRepository
@@ -18,4 +18,10 @@ def create_initiative(
     use_case: CreateInitiativeUseCase = Depends(get_use_case),
 ):
     logger.info("Đã nhận request tạo SKCL", extra={"request_id": request.state.request_id})
-    return use_case.execute(payload)
+    try:
+        initiative_id = use_case.execute(payload)
+        logger.info(f"Tạo SKCL thành công, id={initiative_id}", extra={"request_id": request.state.request_id})
+        return InitiativeCreateResponse(id=initiative_id)
+    except ValueError as e:
+        logger.warning(f"Tạo SKCL thất bại: {e}", extra={"request_id": request.state.request_id})
+        raise HTTPException(status_code=400, detail=str(e))
