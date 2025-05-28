@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-
-from src.components.initiative_room.interface.initiative_router import \
-    router as initiative_router
+from src.shared.core.request_id_middleware import RequestIDMiddleware
+from src.components.initiative_room.interface.initiative_router import router
 
 app = FastAPI()
-app.include_router(initiative_router)
+app.add_middleware(RequestIDMiddleware)
+app.include_router(router)
