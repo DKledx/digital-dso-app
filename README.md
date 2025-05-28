@@ -117,6 +117,9 @@ docker compose up --build
 
 ---
 
+## 📘 Tài liệu kỹ thuật
+- [Changelog](CHANGELOG.md)
+
 ## 📚 Tài liệu tham khảo
 
 - [Clean Architecture (Uncle Bob)](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
