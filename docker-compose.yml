@@ -2,11 +2,7 @@ version: "3.9"
 services:
   app:
     build: .
-    container_name: dso_app
+    env_file:
+      - .env.development
     ports:
       - "${APP_PORT:-8000}:8000"
-    env_file:
-      - .env
-    volumes:
-      - .:/app
-    restart: unless-stopped
