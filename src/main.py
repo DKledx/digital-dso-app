@@ -5,7 +5,6 @@ from src.shared.core.config import settings
 from src.shared.core.request_id_middleware import RequestIDMiddleware
 
 import sentry_sdk
-from src.shared.core.config import settings
 
 if settings.ENV in ["staging", "production"]:
     sentry_sdk.init(
@@ -19,3 +18,10 @@ app.add_middleware(RequestIDMiddleware)
 app.include_router(router)
 
 print(f"🔧 App running in {settings.ENV} mode on port {settings.APP_PORT}")
+
+
+import sentry_sdk
+try:
+    raise ValueError("Simulate exception to test Sentry")
+except Exception as e:
+    sentry_sdk.capture_exception(e)
