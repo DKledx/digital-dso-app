@@ -18,6 +18,8 @@ python-dotenv = "^1.1.0"
 uvicorn = "^0.34.2"
 psycopg2-binary = "^2.9.10"
 alembic = "^1.16.1"
+logtail = "^1.0.1"
+sentry-sdk = "^2.29.1"
 
 
 [tool.poetry.group.dev.dependencies]

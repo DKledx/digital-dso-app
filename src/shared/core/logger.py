@@ -2,6 +2,10 @@ import logging
 import os
 from datetime import datetime
 
+LOGTAIL_TOKEN = os.getenv("nxAye9ZM7MUUwYgu369MEzFF")
+if LOGTAIL_TOKEN:
+    from logtail import LogtailHandler
+
 def get_logger(name: str):
     logger = logging.getLogger(name)
     if not logger.handlers:
@@ -18,5 +22,10 @@ def get_logger(name: str):
         fh = logging.FileHandler(log_filename)
         fh.setFormatter(formatter)
         logger.addHandler(fh)
+        # Logtail (cloud logging)
+        if LOGTAIL_TOKEN:
+            logtail_handler = LogtailHandler(source_token=LOGTAIL_TOKEN)
+            logtail_handler.setFormatter(formatter)
+            logger.addHandler(logtail_handler)
         logger.setLevel(logging.INFO)
     return logger
